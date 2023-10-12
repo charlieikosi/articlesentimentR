@@ -5,8 +5,6 @@
 \title{News Article Sentiment}
 \arguments{
 \item{url}{Takes character as input. This allows the script to access the website.}
-
-\item{lexicon}{Takes in character input. Lexicon types can be 'bing', 'loughran', 'afinn' or 'nrc'.}
 }
 \value{
 Returns an object of class 'data.table'.
@@ -16,6 +14,6 @@ Performs Sentiment Analysis of news articles from the Post-Courier news page
 }
 \examples{
 url <- "https://www.postcourier.com.pg/supplementary-budget-not-a-rushed-secret/";
-df <- article_sentiment(url, "loughran");
+df <- article_sentiment(url);
 print(df)
 }
