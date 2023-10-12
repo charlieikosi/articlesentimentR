@@ -1,0 +1,16 @@
+Package: articlesentimentR
+Title: A sentiment analysis for news articles
+Version: 0.0.0.9000
+Date: 2023-10-12
+Authors@R: 
+    person("Charlie", "Ikosi", role = c("aut", "cre"),
+    email = "charlieikosi@gmail.com")
+Maintainer: Charlie Ikosi <charlieikosi@gmail.com>
+Description: articlesentimentR reads through any post-courier news article and then performs natural language processing to deterim the sentiment of a news article..
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: rvest, tidyverse, tidytext, dplyr, tm, utils, textdata
+
