@@ -2,11 +2,10 @@
 #'
 #' Performs Sentiment Analysis of news articles from the Post-Courier news page
 #' @param url Takes character as input. This allows the script to access the website.
-#' @param lexicon Takes in character input. Lexicon types can be 'bing', 'loughran', 'afinn' or 'nrc'.
 #' @return Returns an object of class 'data.table'.
 #' @examples
 #' url <- "https://www.postcourier.com.pg/supplementary-budget-not-a-rushed-secret/";
-#' df <- article_sentiment(url, "loughran");
+#' df <- article_sentiment(url);
 #' print(df)
 #' @name article_sentiment
 #' @import rvest
@@ -28,7 +27,7 @@ library(utils)
 library(textdata)
 
 
-article_sentiment <- function(url, lexicon){
+article_sentiment <- function(url){
 
   URL <- URLencode(url)
   page <- read_html(URL)
@@ -41,7 +40,7 @@ article_sentiment <- function(url, lexicon){
     unnest_tokens(word, article)
 
   # Load and prepare the sentiment lexicon
-  sentiments <- get_sentiments(lexicon)
+  sentiments <- get_sentiments("loughran")
 
   sentiments_df <- article_tokens %>%
     inner_join(sentiments, by = "word")
